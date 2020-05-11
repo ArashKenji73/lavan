@@ -1,0 +1,182 @@
+phone, navbar-wrapper .navbar-footer .phone, header.container nav .navbar-footer .phone, header.container .phone-menuBtn-wrapper .phone {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+}
+phone i, navbar-wrapper .navbar-footer .phone i, header.container nav .navbar-footer .phone i, header.container .phone-menuBtn-wrapper .phone i {
+  margin-left: 1rem;
+}
+phone a, navbar-wrapper .navbar-footer .phone a, header.container nav .navbar-footer .phone a, header.container .phone-menuBtn-wrapper .phone a {
+  color: #2a2a2a;
+  direction: ltr;
+}
+phone a:hover, navbar-wrapper .navbar-footer .phone a:hover, header.container nav .navbar-footer .phone a:hover, header.container .phone-menuBtn-wrapper .phone a:hover {
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: sepahbod;
+  src: url("../fonts/sepahbod.otf");
+}
+body {
+  direction: rtl;
+  text-align: right;
+}
+
+p {
+  margin-bottom: 0px;
+}
+
+header.container {
+  display: flex;
+  align-items: center;
+  height: 180px;
+  width: 100%;
+}
+header.container .logo {
+  margin-right: auto;
+}
+header.container .logo img {
+  width: 196px;
+}
+header.container .phone-menuBtn-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+header.container .phone-menuBtn-wrapper .menu-btn-toggle {
+  cursor: pointer;
+  width: 50px;
+  margin-left: 1rem;
+}
+navbar-wrapper, header.container nav {
+  position: relative;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  visibility: hidden;
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+navbar-wrapper.toggledIn, header.container nav.toggledIn {
+  visibility: visible;
+  z-index: 1;
+  opacity: 1;
+}
+navbar-wrapper.toggledIn .main-nav li a, header.container nav.toggledIn .main-nav li a {
+  transform: translateY(0);
+}
+navbar-wrapper .top-level, header.container nav .top-level {
+  position: absolute;
+  top: 50px;
+  height: 50px;
+}
+navbar-wrapper .top-level #closeMenu, header.container nav .top-level #closeMenu {
+  padding: 0px;
+  font-size: 3rem;
+  border: 0px;
+  background: transparent;
+}
+navbar-wrapper .main-nav, header.container nav .main-nav {
+  width: 100%;
+}
+navbar-wrapper .main-nav li, header.container nav .main-nav li {
+  width: 50%;
+  margin: 0 auto;
+  overflow-y: hidden;
+  list-style: none;
+  transition: all 0.3s;
+}
+navbar-wrapper .main-nav li a, header.container nav .main-nav li a {
+  font-family: sepahbod;
+  color: #313131;
+  transform: translateY(100%);
+  display: block;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 1.75rem;
+  transition: transform 0.3s;
+}
+navbar-wrapper .main-nav li a:hover, header.container nav .main-nav li a:hover {
+  text-decoration: none;
+}
+navbar-wrapper .navbar-footer, header.container nav .navbar-footer {
+  display: flex;
+  position: absolute;
+  bottom: 0%;
+  height: 100px;
+  background: #ddd;
+}
+navbar-wrapper .navbar-footer .address, header.container nav .navbar-footer .address, navbar-wrapper .navbar-footer .social, header.container nav .navbar-footer .social, navbar-wrapper .navbar-footer .phone, header.container nav .navbar-footer .phone {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+navbar-wrapper .navbar-footer .address, header.container nav .navbar-footer .address, navbar-wrapper .navbar-footer .phone, header.container nav .navbar-footer .phone {
+  width: 350px;
+}
+navbar-wrapper .navbar-footer .social, header.container nav .navbar-footer .social {
+  justify-content: space-around;
+  flex-grow: 1;
+}
+navbar-wrapper .navbar-footer .social span, header.container nav .navbar-footer .social span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  background: #fff;
+}
+navbar-wrapper .navbar-footer .phone, header.container nav .navbar-footer .phone {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1rem;
+}
+
+header.container nav .main-nav li:nth-child(1) a {
+  transition-delay: 0.05s;
+}
+
+header.container nav .main-nav li:nth-child(2) a {
+  transition-delay: 0.1s;
+}
+
+header.container nav .main-nav li:nth-child(3) a {
+  transition-delay: 0.15s;
+}
+
+header.container nav .main-nav li:nth-child(4) a {
+  transition-delay: 0.2s;
+}
+
+header.container nav .main-nav li:nth-child(5) a {
+  transition-delay: 0.25s;
+}
+
+header.container nav .main-nav li:nth-child(6) a {
+  transition-delay: 0.3s;
+}
+
+header.container nav .main-nav li:nth-child(7) a {
+  transition-delay: 0.35s;
+}
+
+header.container nav .main-nav li:nth-child(8) a {
+  transition-delay: 0.4s;
+}
+
+header.container nav .main-nav li:nth-child(9) a {
+  transition-delay: 0.45s;
+}
+
+/*# sourceMappingURL=main.css.map */
