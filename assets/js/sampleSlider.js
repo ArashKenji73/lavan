@@ -1,7 +1,7 @@
 // its for main slider 
 var flkty = new Flickity('#sampleCarousel', {
     //these are options
-    cellAlign: "left",
+    cellAlign: "right",
     //wrapAround: true,
     rightToLeft: true,
     //draggable: false,

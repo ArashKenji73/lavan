@@ -58,7 +58,7 @@ body {
   text-align: right;
 }
 
-p {
+p, h1, h2, h3, h4, h5 {
   margin-bottom: 0px;
   font-family: iranSans;
 }
@@ -137,7 +137,7 @@ navbar-wrapper .main-nav li.active a::after, header.container nav .main-nav li.a
   position: absolute;
   top: 80%;
   height: 5px;
-  width: 80px;
+  width: 90%;
   background: #42abe8;
   left: 0px;
   right: 0px;
@@ -145,6 +145,8 @@ navbar-wrapper .main-nav li.active a::after, header.container nav .main-nav li.a
 }
 navbar-wrapper .main-nav li a, header.container nav .main-nav li a {
   font-family: sepahbod;
+  width: max-content;
+  margin: 0 auto;
   color: #313131;
   transform: translateY(100%);
   display: block;
@@ -310,16 +312,33 @@ header.container .phone-menuBtn-wrapper .phone span {
 .samples .left {
   width: 60%;
 }
-.samples .left .carousel {
-  background: #EEE;
-}
 .samples .left .carousel .carousel-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
   width: 28%;
   height: 200px;
   margin-right: 10px;
   background: #8C8;
   border-radius: 5px;
   counter-increment: gallery-cell;
+  transition: all 0.3s;
+}
+.samples .left .carousel .carousel-cell:hover {
+  background: #ED2;
+  transform: translateY(-10px);
+  box-shadow: 0px 0px 20px #c3c1c1;
+}
+.samples .left .carousel .carousel-cell .title, .samples .left .carousel .carousel-cell .subtitle {
+  text-align: center;
+}
+.samples .left .carousel .carousel-cell .title {
+  font-size: 1.1rem;
+}
+.samples .left .carousel .carousel-cell .subtitle {
+  font-size: 0.9rem;
 }
 
 /*# sourceMappingURL=main.css.map */
