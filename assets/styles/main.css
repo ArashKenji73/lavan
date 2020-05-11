@@ -90,7 +90,7 @@ navbar-wrapper .main-nav, header.container nav .main-nav {
   width: 100%;
 }
 navbar-wrapper .main-nav li, header.container nav .main-nav li {
-  width: 50%;
+  width: 30%;
   margin: 0 auto;
   overflow-y: hidden;
   list-style: none;
