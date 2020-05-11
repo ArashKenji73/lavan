@@ -1,29 +1,30 @@
+@font-face {
+  font-family: sepahbod;
+  src: url("../fonts/sepahbod.otf");
+}
+@font-face {
+  font-family: iranSans;
+  src: url("../fonts/IRANSans.ttf");
+}
 * {
   font-family: sans-serif;
+  margin: 0px;
+  box-sizing: border-box;
 }
 
 a {
   text-decoration: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-phone, navbar-wrapper .navbar-footer .phone, header.container nav .navbar-footer .phone, header.container .phone-menuBtn-wrapper .phone {
-  display: flex;
-  align-items: center;
-  font-size: 2rem;
+body {
+  direction: rtl;
+  text-align: right;
 }
-phone:hover i, navbar-wrapper .navbar-footer .phone:hover i, header.container nav .navbar-footer .phone:hover i, header.container .phone-menuBtn-wrapper .phone:hover i {
-  transform: rotate(-20deg);
-}
-phone i, navbar-wrapper .navbar-footer .phone i, header.container nav .navbar-footer .phone i, header.container .phone-menuBtn-wrapper .phone i {
-  margin-left: 1rem;
-  transition: all 0.3s;
-}
-phone a, navbar-wrapper .navbar-footer .phone a, header.container nav .navbar-footer .phone a, header.container .phone-menuBtn-wrapper .phone a {
-  color: #2a2a2a;
-  direction: ltr;
-}
-phone a:hover, navbar-wrapper .navbar-footer .phone a:hover, header.container nav .navbar-footer .phone a:hover, header.container .phone-menuBtn-wrapper .phone a:hover {
-  text-decoration: none;
+
+p {
+  margin-bottom: 0px;
+  font-family: iranSans;
 }
 
 .container {
@@ -32,6 +33,139 @@ phone a:hover, navbar-wrapper .navbar-footer .phone a:hover, header.container na
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+}
+
+phone, header.container .phone-menuBtn-wrapper .phone, navbar-wrapper .navbar-footer .phone, header.container nav .navbar-footer .phone {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  color: #2a2a2a;
+}
+phone:hover i, header.container .phone-menuBtn-wrapper .phone:hover i, navbar-wrapper .navbar-footer .phone:hover i, header.container nav .navbar-footer .phone:hover i {
+  transform: rotate(-20deg);
+}
+phone i, header.container .phone-menuBtn-wrapper .phone i, navbar-wrapper .navbar-footer .phone i, header.container nav .navbar-footer .phone i {
+  margin-left: 1rem;
+  transition: all 0.3s;
+}
+
+navbar-wrapper, header.container nav {
+  position: relative;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  visibility: hidden;
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+navbar-wrapper.toggledIn, header.container nav.toggledIn {
+  visibility: visible;
+  z-index: 1;
+  opacity: 1;
+}
+navbar-wrapper.toggledIn .main-nav li a, header.container nav.toggledIn .main-nav li a {
+  transform: translateY(0);
+}
+navbar-wrapper .top-level, header.container nav .top-level {
+  position: absolute;
+  top: 60px;
+  height: 50px;
+}
+navbar-wrapper .top-level #closeMenu, header.container nav .top-level #closeMenu {
+  padding: 0px;
+  font-size: 3rem;
+  border: 0px;
+  background: transparent;
+}
+navbar-wrapper .main-nav, header.container nav .main-nav {
+  width: 100%;
+}
+navbar-wrapper .main-nav li, header.container nav .main-nav li {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  overflow-y: hidden;
+  list-style: none;
+  transition: all 0.3s;
+}
+navbar-wrapper .main-nav li.active::after, header.container nav .main-nav li.active::after {
+  content: "";
+  position: absolute;
+  top: 80%;
+  height: 5px;
+  width: 80px;
+  background: #42abe8;
+  left: 0px;
+  right: 0px;
+  margin: 0px auto;
+}
+navbar-wrapper .main-nav li a, header.container nav .main-nav li a {
+  font-family: sepahbod;
+  color: #313131;
+  transform: translateY(100%);
+  display: block;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 1rem;
+  transition: transform 0.3s;
+}
+navbar-wrapper .main-nav li a:hover, header.container nav .main-nav li a:hover {
+  text-decoration: none;
+}
+@media screen and (min-width: 576px) {
+  navbar-wrapper .main-nav li, header.container nav .main-nav li {
+    width: 25%;
+  }
+  navbar-wrapper .main-nav li a, header.container nav .main-nav li a {
+    font-size: 1.75rem;
+  }
+}
+navbar-wrapper .navbar-footer, header.container nav .navbar-footer {
+  display: flex;
+  position: absolute;
+  bottom: 0%;
+  height: 100px;
+  background: #ddd;
+}
+navbar-wrapper .navbar-footer .address, header.container nav .navbar-footer .address,
+navbar-wrapper .navbar-footer .social,
+header.container nav .navbar-footer .social,
+navbar-wrapper .navbar-footer .phone,
+header.container nav .navbar-footer .phone {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+navbar-wrapper .navbar-footer .address, header.container nav .navbar-footer .address,
+navbar-wrapper .navbar-footer .phone,
+header.container nav .navbar-footer .phone {
+  width: 350px;
+}
+navbar-wrapper .navbar-footer .social, header.container nav .navbar-footer .social {
+  justify-content: space-around;
+  flex-grow: 1;
+}
+navbar-wrapper .navbar-footer .social span, header.container nav .navbar-footer .social span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  background: #fff;
+}
+navbar-wrapper .navbar-footer .phone, header.container nav .navbar-footer .phone {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1rem;
 }
 
 @media (min-width: 576px) {
@@ -96,24 +230,10 @@ phone a:hover, navbar-wrapper .navbar-footer .phone a:hover, header.container na
     max-width: 1140px;
   }
 }
-@font-face {
-  font-family: sepahbod;
-  src: url("../fonts/sepahbod.otf");
-}
-body {
-  direction: rtl;
-  text-align: right;
-}
-
-p {
-  margin-bottom: 0px;
-}
-
 header.container {
   display: flex;
   align-items: center;
   height: 180px;
-  width: 100%;
 }
 header.container .logo {
   margin-right: auto;
@@ -132,13 +252,16 @@ header.container .phone-menuBtn-wrapper .menu-btn-toggle {
   width: 50px;
   margin-left: 1rem;
 }
+header.container .phone-menuBtn-wrapper .phone span {
+  visibility: hidden;
+}
+@media screen and (min-width: 576px) {
+  header.container .phone-menuBtn-wrapper .phone span {
+    visibility: visible;
+  }
+}
 navbar-wrapper, header.container nav {
-  position: relative;
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
   top: 0px;
   left: 0px;
   width: 100vw;
@@ -148,6 +271,13 @@ navbar-wrapper, header.container nav {
   z-index: -1;
   opacity: 0;
   transition: all 0.3s linear;
+}
+@media screen and (min-width: 576px) {
+  navbar-wrapper, header.container nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 navbar-wrapper.toggledIn, header.container nav.toggledIn {
   visibility: visible;
@@ -159,7 +289,7 @@ navbar-wrapper.toggledIn .main-nav li a, header.container nav.toggledIn .main-na
 }
 navbar-wrapper .top-level, header.container nav .top-level {
   position: absolute;
-  top: 70px;
+  top: 60px;
   height: 50px;
 }
 navbar-wrapper .top-level #closeMenu, header.container nav .top-level #closeMenu {
@@ -170,10 +300,11 @@ navbar-wrapper .top-level #closeMenu, header.container nav .top-level #closeMenu
 }
 navbar-wrapper .main-nav, header.container nav .main-nav {
   width: 100%;
+  margin-top: 25%;
 }
 navbar-wrapper .main-nav li, header.container nav .main-nav li {
   position: relative;
-  width: 25%;
+  width: 100%;
   margin: 0 auto;
   overflow-y: hidden;
   list-style: none;
@@ -184,7 +315,7 @@ navbar-wrapper .main-nav li.active::after, header.container nav .main-nav li.act
   position: absolute;
   top: 80%;
   height: 5px;
-  width: 100px;
+  width: 80px;
   background: #42abe8;
   left: 0px;
   right: 0px;
@@ -197,18 +328,38 @@ navbar-wrapper .main-nav li a, header.container nav .main-nav li a {
   display: block;
   padding: 0.5rem;
   text-align: center;
-  font-size: 1.75rem;
+  font-size: 1rem;
   transition: transform 0.3s;
 }
 navbar-wrapper .main-nav li a:hover, header.container nav .main-nav li a:hover {
   text-decoration: none;
 }
+@media screen and (min-width: 576px) {
+  navbar-wrapper .main-nav, header.container nav .main-nav {
+    margin-top: 0px;
+  }
+  navbar-wrapper .main-nav li, header.container nav .main-nav li {
+    width: 25%;
+  }
+  navbar-wrapper .main-nav li a, header.container nav .main-nav li a {
+    font-size: 1.75rem;
+  }
+}
 navbar-wrapper .navbar-footer, header.container nav .navbar-footer {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
   bottom: 0%;
-  height: 100px;
+  height: 250px;
   background: #ddd;
+  padding: 15px 0px;
+}
+@media screen and (min-width: 576px) {
+  navbar-wrapper .navbar-footer, header.container nav .navbar-footer {
+    flex-direction: row;
+    height: 100px;
+  }
 }
 navbar-wrapper .navbar-footer .address, header.container nav .navbar-footer .address,
 navbar-wrapper .navbar-footer .social,
@@ -239,8 +390,13 @@ navbar-wrapper .navbar-footer .social span, header.container nav .navbar-footer 
 }
 navbar-wrapper .navbar-footer .phone, header.container nav .navbar-footer .phone {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   font-size: 1rem;
+}
+@media screen and (min-width: 576px) {
+  navbar-wrapper .navbar-footer .phone, header.container nav .navbar-footer .phone {
+    justify-content: flex-end;
+  }
 }
 
 header.container nav .main-nav li:nth-child(1) a {
