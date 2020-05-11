@@ -1,3 +1,39 @@
+header.container nav .main-nav li:nth-child(1) a {
+  transition-delay: 0.05s;
+}
+
+header.container nav .main-nav li:nth-child(2) a {
+  transition-delay: 0.1s;
+}
+
+header.container nav .main-nav li:nth-child(3) a {
+  transition-delay: 0.15s;
+}
+
+header.container nav .main-nav li:nth-child(4) a {
+  transition-delay: 0.2s;
+}
+
+header.container nav .main-nav li:nth-child(5) a {
+  transition-delay: 0.25s;
+}
+
+header.container nav .main-nav li:nth-child(6) a {
+  transition-delay: 0.3s;
+}
+
+header.container nav .main-nav li:nth-child(7) a {
+  transition-delay: 0.35s;
+}
+
+header.container nav .main-nav li:nth-child(8) a {
+  transition-delay: 0.4s;
+}
+
+header.container nav .main-nav li:nth-child(9) a {
+  transition-delay: 0.45s;
+}
+
 @font-face {
   font-family: sepahbod;
   src: url("../fonts/sepahbod.otf");
@@ -96,7 +132,7 @@ navbar-wrapper .main-nav li, header.container nav .main-nav li {
   list-style: none;
   transition: all 0.3s;
 }
-navbar-wrapper .main-nav li.active::after, header.container nav .main-nav li.active::after {
+navbar-wrapper .main-nav li.active a::after, header.container nav .main-nav li.active a::after {
   content: "";
   position: absolute;
   top: 80%;
@@ -260,179 +296,30 @@ header.container .phone-menuBtn-wrapper .phone span {
     visibility: visible;
   }
 }
-navbar-wrapper, header.container nav {
-  justify-content: flex-start;
-  top: 0px;
-  left: 0px;
-  width: 100vw;
-  height: 100vh;
-  background: #fff;
-  visibility: hidden;
-  z-index: -1;
-  opacity: 0;
-  transition: all 0.3s linear;
+.samples {
+  display: flex;
 }
-@media screen and (min-width: 576px) {
-  navbar-wrapper, header.container nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
-navbar-wrapper.toggledIn, header.container nav.toggledIn {
-  visibility: visible;
-  z-index: 1;
-  opacity: 1;
-}
-navbar-wrapper.toggledIn .main-nav li a, header.container nav.toggledIn .main-nav li a {
-  transform: translateY(0);
-}
-navbar-wrapper .top-level, header.container nav .top-level {
-  position: absolute;
-  top: 60px;
-  height: 50px;
-}
-navbar-wrapper .top-level #closeMenu, header.container nav .top-level #closeMenu {
-  padding: 0px;
-  font-size: 3rem;
-  border: 0px;
-  background: transparent;
-}
-navbar-wrapper .main-nav, header.container nav .main-nav {
-  width: 100%;
-  margin-top: 25%;
-}
-navbar-wrapper .main-nav li, header.container nav .main-nav li {
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-  overflow-y: hidden;
-  list-style: none;
-  transition: all 0.3s;
-}
-navbar-wrapper .main-nav li.active::after, header.container nav .main-nav li.active::after {
-  content: "";
-  position: absolute;
-  top: 80%;
-  height: 5px;
-  width: 80px;
-  background: #42abe8;
-  left: 0px;
-  right: 0px;
-  margin: 0px auto;
-}
-navbar-wrapper .main-nav li a, header.container nav .main-nav li a {
-  font-family: sepahbod;
-  color: #313131;
-  transform: translateY(100%);
-  display: block;
-  padding: 0.5rem;
-  text-align: center;
-  font-size: 1rem;
-  transition: transform 0.3s;
-}
-navbar-wrapper .main-nav li a:hover, header.container nav .main-nav li a:hover {
-  text-decoration: none;
-}
-@media screen and (min-width: 576px) {
-  navbar-wrapper .main-nav, header.container nav .main-nav {
-    margin-top: 0px;
-  }
-  navbar-wrapper .main-nav li, header.container nav .main-nav li {
-    width: 25%;
-  }
-  navbar-wrapper .main-nav li a, header.container nav .main-nav li a {
-    font-size: 1.75rem;
-  }
-}
-navbar-wrapper .navbar-footer, header.container nav .navbar-footer {
+.samples .right {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  position: absolute;
-  bottom: 0%;
-  height: 250px;
+  justify-content: center;
+  width: 40%;
+  padding: 0px 3.3rem;
   background: #ddd;
-  padding: 15px 0px;
 }
-@media screen and (min-width: 576px) {
-  navbar-wrapper .navbar-footer, header.container nav .navbar-footer {
-    flex-direction: row;
-    height: 100px;
-  }
+.samples .left {
+  width: 60%;
 }
-navbar-wrapper .navbar-footer .address, header.container nav .navbar-footer .address,
-navbar-wrapper .navbar-footer .social,
-header.container nav .navbar-footer .social,
-navbar-wrapper .navbar-footer .phone,
-header.container nav .navbar-footer .phone {
-  display: flex;
-  align-items: center;
-  height: 100%;
+.samples .left .carousel {
+  background: #EEE;
 }
-navbar-wrapper .navbar-footer .address, header.container nav .navbar-footer .address,
-navbar-wrapper .navbar-footer .phone,
-header.container nav .navbar-footer .phone {
-  width: 350px;
-}
-navbar-wrapper .navbar-footer .social, header.container nav .navbar-footer .social {
-  justify-content: space-around;
-  flex-grow: 1;
-}
-navbar-wrapper .navbar-footer .social span, header.container nav .navbar-footer .social span {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  width: 50px;
-  border-radius: 100%;
-  background: #fff;
-}
-navbar-wrapper .navbar-footer .phone, header.container nav .navbar-footer .phone {
-  display: flex;
-  justify-content: center;
-  font-size: 1rem;
-}
-@media screen and (min-width: 576px) {
-  navbar-wrapper .navbar-footer .phone, header.container nav .navbar-footer .phone {
-    justify-content: flex-end;
-  }
-}
-
-header.container nav .main-nav li:nth-child(1) a {
-  transition-delay: 0.05s;
-}
-
-header.container nav .main-nav li:nth-child(2) a {
-  transition-delay: 0.1s;
-}
-
-header.container nav .main-nav li:nth-child(3) a {
-  transition-delay: 0.15s;
-}
-
-header.container nav .main-nav li:nth-child(4) a {
-  transition-delay: 0.2s;
-}
-
-header.container nav .main-nav li:nth-child(5) a {
-  transition-delay: 0.25s;
-}
-
-header.container nav .main-nav li:nth-child(6) a {
-  transition-delay: 0.3s;
-}
-
-header.container nav .main-nav li:nth-child(7) a {
-  transition-delay: 0.35s;
-}
-
-header.container nav .main-nav li:nth-child(8) a {
-  transition-delay: 0.4s;
-}
-
-header.container nav .main-nav li:nth-child(9) a {
-  transition-delay: 0.45s;
+.samples .left .carousel .carousel-cell {
+  width: 28%;
+  height: 200px;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: 5px;
+  counter-increment: gallery-cell;
 }
 
 /*# sourceMappingURL=main.css.map */

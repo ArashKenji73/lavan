@@ -7,6 +7,8 @@
     }
 }
 
+@include delay(8, 0.05s);
+
 @mixin flex-perfect-center {
     display: flex;
     justify-content: center;
@@ -40,13 +42,14 @@ a {
 body {
     direction: rtl;
     text-align: right;
-    
+
 }
 
 p {
     margin-bottom: 0px;
     font-family: iranSans;
 }
+
 //components
 .container {
     width: 100%;
@@ -55,6 +58,7 @@ p {
     margin-right: auto;
     margin-left: auto
 }
+
 phone {
     //flex-grow: 1;
     display: flex;
@@ -73,6 +77,7 @@ phone {
         transition: all 0.3s;
     }
 }
+
 navbar-wrapper {
     position: relative;
     position: fixed;
@@ -128,7 +133,7 @@ navbar-wrapper {
             list-style: none;
             transition: all 0.3s;
 
-            &.active::after {
+            &.active a::after {
                 content: "";
                 position: absolute;
                 top: 80%;
@@ -159,8 +164,9 @@ navbar-wrapper {
         }
 
         @media screen and (min-width: 576px) {
-            li{ 
+            li {
                 width: 25%;
+
                 a {
                     font-size: 1.75rem;
                 }
@@ -300,6 +306,7 @@ header {
         display: flex;
         align-items: center;
         height: 180px;
+
         //width: 100%;
 
         //background: #eee;
@@ -330,6 +337,7 @@ header {
 
             .phone {
                 @extend phone;
+
                 span {
                     visibility: hidden;
                 }
@@ -352,167 +360,29 @@ header {
 
 }
 
-
-
-
-
-navbar-wrapper {
-    justify-content: flex-start;
-    top: 0px;
-    left: 0px;
-    width: 100vw;
-    height: 100vh;
-    background: #fff;
-    visibility: hidden;
-    z-index: -1;
-    opacity: 0;
-    transition: all 0.3s linear;
-    
-    
-    @media screen and (min-width: 576px) {
-        @include flex-perfect-center;
-    }
-    
-    
-    
-
-    &.toggledIn {
-        visibility: visible;
-        z-index: 1;
-        opacity: 1;
-
-        .main-nav {
-            li a {
-                transform: translateY(0);
-            }
-        }
-    }
-
-    .top-level {
-        position: absolute;
-        top: 60px;
-        height: 50px;
-
-        #closeMenu {
-            padding: 0px;
-            font-size: 3rem;
-            border: 0px;
-            background: transparent;
-        }
-    }
-
-    .main-nav {
-        width: 100%;
-        margin-top: 25%;
-
-        //background: red;
-        li {
-            position: relative;
-            width: 100%;
-            margin: 0 auto;
-            overflow-y: hidden;
-            //background: #ddd;
-            list-style: none;
-            transition: all 0.3s;
-
-            &.active::after {
-                content: "";
-                position: absolute;
-                top: 80%;
-                height: 5px;
-                width: 80px;
-                background: #42abe8;
-                left: 0px;
-                right: 0px;
-                margin: 0px auto;
-            }
-
-            a {
-                font-family: sepahbod;
-                color: #313131;
-                transform: translateY(100%);
-                display: block;
-                padding: 0.5rem;
-                //background: #eee;
-                text-align: center;
-                font-size: 1rem;
-                transition: transform 0.3s;
-
-                &:hover {
-                    text-decoration: none;
-                }
-
-            }
-        }
-
-        @media screen and (min-width: 576px) {
-            margin-top: 0px;
-            li{ 
-                width: 25%;
-                a {
-                    font-size: 1.75rem;
-                }
-            }
-        }
-    }
-
-    .navbar-footer {
+.samples {
+    display: flex;
+    .right{
         display: flex;
         flex-direction: column;
-        align-items: center;
-        position: absolute;
-        bottom: 0%;
-        height: 250px;
+        justify-content: center;
+        width: 40%;
+        padding: 0px 3.3rem;
         background: #ddd;
-        padding: 15px 0px;
-        
-        
-        @media screen and (min-width: 576px) {
-            flex-direction: row;
-            height: 100px;
-        }
-
-        .address,
-        .social,
-        .phone {
-            display: flex;
-            align-items: center;
-            height: 100%;
-
-        }
-
-        .address,
-        .phone {
-            width: 350px;
-        }
-
-        .social {
-            justify-content: space-around;
-            flex-grow: 1;
-
-            span {
-                @include flex-perfect-center;
-                height: 50px;
-                width: 50px;
-                border-radius: 100%;
-                background: #fff;
-            }
-        }
-
-        .phone {
-            @extend phone;
-            display: flex;
-            justify-content: center;
-            font-size: 1rem;
-
-            @media screen and (min-width: 576px) {
-                justify-content: flex-end;
+    }
+    .left {
+        width: 60%;
+        .carousel {
+            background: #EEE;
+            .carousel-cell {
+                width: 28%;
+                height: 200px;
+                margin-right: 10px;
+                background: #8C8;
+                border-radius: 5px;
+                counter-increment: gallery-cell;
             }
         }
     }
 
 }
-
-
-
-@include delay(8, 0.05s);
