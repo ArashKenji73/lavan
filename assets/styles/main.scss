@@ -1,27 +1,40 @@
 //
 @mixin delay($ElmNumber, $time) {
     @for $i from 1 through ($ElmNumber +1) {
-      header.container nav .main-nav li:nth-child(#{$i}) a {
-        transition-delay: $i * $time;
-      }
+        header.container nav .main-nav li:nth-child(#{$i}) a {
+            transition-delay: $i * $time;
+        }
     }
 }
 
 @mixin flex-perfect-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
+*{
+    font-family: sans-serif;
+}
+a{text-decoration: none;}
+
+//components
 phone {
     //flex-grow: 1;
     display: flex;
     align-items: center;
     font-size: 2rem;
+    
+    &:hover{
+        i{
+            transform: rotate(-20deg);
+        }
+    }
 
     i {
         margin-left: 1rem;
+        transition: all 0.3s;
     }
 
     a {
@@ -34,10 +47,93 @@ phone {
     }
 }
 
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto
+}
+
+@media (min-width:576px) {
+    .container {
+        max-width: 540px
+    }
+}
+
+@media (min-width:768px) {
+    .container {
+        max-width: 720px
+    }
+}
+
+@media (min-width:992px) {
+    .container {
+        max-width: 960px
+    }
+}
+
+@media (min-width:1200px) {
+    .container {
+        max-width: 1140px
+    }
+}
+
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto
+}
+
+@media (min-width:576px) {
+
+    .container,
+    .container-sm {
+        max-width: 540px
+    }
+}
+
+@media (min-width:768px) {
+
+    .container,
+    .container-md,
+    .container-sm {
+        max-width: 720px
+    }
+}
+
+@media (min-width:992px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm {
+        max-width: 960px
+    }
+}
+
+@media (min-width:1200px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl {
+        max-width: 1140px
+    }
+}
+
+
 
 @font-face {
-  font-family: sepahbod;
-  src: url('../fonts/sepahbod.otf');
+    font-family: sepahbod;
+    src: url('../fonts/sepahbod.otf');
 }
 
 
@@ -51,7 +147,7 @@ body {
     text-align: right;
 }
 
-p{
+p {
     margin-bottom: 0px;
 }
 
@@ -128,7 +224,7 @@ navbar-wrapper {
         z-index: 1;
         opacity: 1;
 
-        .main-nav{
+        .main-nav {
             li a {
                 transform: translateY(0);
             }
@@ -137,8 +233,9 @@ navbar-wrapper {
 
     .top-level {
         position: absolute;
-        top: 50px;
+        top: 70px;
         height: 50px;
+
         #closeMenu {
             padding: 0px;
             font-size: 3rem;
@@ -147,16 +244,31 @@ navbar-wrapper {
         }
     }
 
-    .main-nav{
+    .main-nav {
         width: 100%;
+
         //background: red;
-            li {
-                width: 30%;
-                margin: 0 auto;
-                overflow-y: hidden;
-                //background: #ddd;
-                list-style: none;
-                transition: all 0.3s;    
+        li {
+            position: relative;
+            width: 25%;
+            margin: 0 auto;
+            overflow-y: hidden;
+            //background: #ddd;
+            list-style: none;
+            transition: all 0.3s;
+
+            &.active::after {
+                content: "";
+                position: absolute;
+                top: 80%;
+                height: 5px;
+                width: 100px;
+                background: #42abe8;
+                left: 0px;
+                right: 0px;
+                margin: 0px auto;
+            }
+
             a {
                 font-family: sepahbod;
                 color: #313131;
@@ -167,35 +279,41 @@ navbar-wrapper {
                 text-align: center;
                 font-size: 1.75rem;
                 transition: transform 0.3s;
-                &:hover{
+
+                &:hover {
                     text-decoration: none;
                 }
-                
+
             }
         }
     }
-    
-    .navbar-footer{
+
+    .navbar-footer {
         display: flex;
         position: absolute;
         bottom: 0%;
         height: 100px;
         background: #ddd;
-        .address,.social,.phone{
+
+        .address,
+        .social,
+        .phone {
             display: flex;
             align-items: center;
             height: 100%;
-            
+
         }
-        
-        .address, .phone{
+
+        .address,
+        .phone {
             width: 350px;
-        } 
-        
-        .social{
+        }
+
+        .social {
             justify-content: space-around;
             flex-grow: 1;
-            span{
+
+            span {
                 @include flex-perfect-center;
                 height: 50px;
                 width: 50px;
@@ -203,17 +321,17 @@ navbar-wrapper {
                 background: #fff;
             }
         }
-        .phone{
+
+        .phone {
             @extend phone;
             display: flex;
             justify-content: flex-end;
             font-size: 1rem;
         }
     }
-    
+
 }
 
 
 
 @include delay(8, 0.05s);
-

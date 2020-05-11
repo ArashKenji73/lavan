@@ -1,10 +1,22 @@
+* {
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
 phone, navbar-wrapper .navbar-footer .phone, header.container nav .navbar-footer .phone, header.container .phone-menuBtn-wrapper .phone {
   display: flex;
   align-items: center;
   font-size: 2rem;
 }
+phone:hover i, navbar-wrapper .navbar-footer .phone:hover i, header.container nav .navbar-footer .phone:hover i, header.container .phone-menuBtn-wrapper .phone:hover i {
+  transform: rotate(-20deg);
+}
 phone i, navbar-wrapper .navbar-footer .phone i, header.container nav .navbar-footer .phone i, header.container .phone-menuBtn-wrapper .phone i {
   margin-left: 1rem;
+  transition: all 0.3s;
 }
 phone a, navbar-wrapper .navbar-footer .phone a, header.container nav .navbar-footer .phone a, header.container .phone-menuBtn-wrapper .phone a {
   color: #2a2a2a;
@@ -14,6 +26,76 @@ phone a:hover, navbar-wrapper .navbar-footer .phone a:hover, header.container na
   text-decoration: none;
 }
 
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container,
+.container-sm {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container,
+.container-md,
+.container-sm {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container,
+.container-lg,
+.container-md,
+.container-sm {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl {
+    max-width: 1140px;
+  }
+}
 @font-face {
   font-family: sepahbod;
   src: url("../fonts/sepahbod.otf");
@@ -77,7 +159,7 @@ navbar-wrapper.toggledIn .main-nav li a, header.container nav.toggledIn .main-na
 }
 navbar-wrapper .top-level, header.container nav .top-level {
   position: absolute;
-  top: 50px;
+  top: 70px;
   height: 50px;
 }
 navbar-wrapper .top-level #closeMenu, header.container nav .top-level #closeMenu {
@@ -90,11 +172,23 @@ navbar-wrapper .main-nav, header.container nav .main-nav {
   width: 100%;
 }
 navbar-wrapper .main-nav li, header.container nav .main-nav li {
-  width: 30%;
+  position: relative;
+  width: 25%;
   margin: 0 auto;
   overflow-y: hidden;
   list-style: none;
   transition: all 0.3s;
+}
+navbar-wrapper .main-nav li.active::after, header.container nav .main-nav li.active::after {
+  content: "";
+  position: absolute;
+  top: 80%;
+  height: 5px;
+  width: 100px;
+  background: #42abe8;
+  left: 0px;
+  right: 0px;
+  margin: 0px auto;
 }
 navbar-wrapper .main-nav li a, header.container nav .main-nav li a {
   font-family: sepahbod;
@@ -116,12 +210,18 @@ navbar-wrapper .navbar-footer, header.container nav .navbar-footer {
   height: 100px;
   background: #ddd;
 }
-navbar-wrapper .navbar-footer .address, header.container nav .navbar-footer .address, navbar-wrapper .navbar-footer .social, header.container nav .navbar-footer .social, navbar-wrapper .navbar-footer .phone, header.container nav .navbar-footer .phone {
+navbar-wrapper .navbar-footer .address, header.container nav .navbar-footer .address,
+navbar-wrapper .navbar-footer .social,
+header.container nav .navbar-footer .social,
+navbar-wrapper .navbar-footer .phone,
+header.container nav .navbar-footer .phone {
   display: flex;
   align-items: center;
   height: 100%;
 }
-navbar-wrapper .navbar-footer .address, header.container nav .navbar-footer .address, navbar-wrapper .navbar-footer .phone, header.container nav .navbar-footer .phone {
+navbar-wrapper .navbar-footer .address, header.container nav .navbar-footer .address,
+navbar-wrapper .navbar-footer .phone,
+header.container nav .navbar-footer .phone {
   width: 350px;
 }
 navbar-wrapper .navbar-footer .social, header.container nav .navbar-footer .social {
