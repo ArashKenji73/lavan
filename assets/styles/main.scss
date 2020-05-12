@@ -42,12 +42,21 @@ a {
 body {
     direction: rtl;
     text-align: right;
+    overflow-x: hidden;
 
 }
 
 p, h1, h2, h3, h4, h5 {
     margin-bottom: 0px;
     font-family: iranSans;
+    
+    text-align: center;
+    
+    @media screen and (min-width: 576px) {
+        text-align: right;
+    }
+    
+    
 }
 
 //container
@@ -310,16 +319,60 @@ header {
 
 .samples {
     display: flex;
+    margin-top: 80px;
+    flex-direction: column;
+    
+    
+    @media screen and (min-width: 576px) {
+        flex-direction: row;
+        margin-top: 120px;
+    }
     .right{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 40%;
+        width: 100%;
         padding: 0px 3.3rem;
-        background: #ddd;
+        //background: #ddd;
+        @media screen and (min-width: 576px) {
+            width: 40%;
+        }
+        .title{
+            margin-bottom: 1rem;
+        }
+        .title ,ul{
+            font-family: iranSans;
+        }
+        
+        ul{
+            list-style: none;
+            padding: 0px;
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: space-between;
+            padding: 0px 15px;
+            li{
+                display: flex;
+                align-items: center;
+                &::before {
+                  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+                  color: deepskyblue; /* Change the color */
+                  font-weight: bolder; /* If you want it to be bold */
+                  //display: inline-block; /* Needed to add space */
+                  font-size: 40px;
+                  margin-left: 0.5rem;
+                }
+                flex-grow: 1;
+                a{color: black;}
+            }
+        }
     }
     .left {
-        width: 60%;
+        width: 100%;
+        @media screen and (min-width: 576px) {
+            width: 60%;
+        }
         .carousel {
             //background: #EEE;
             .carousel-cell {
@@ -327,8 +380,8 @@ header {
                 position: relative;
                 flex-direction: column;
                 padding: 1rem;
-                width: 28%;
-                height: 200px;
+                width: 300px;
+                height: 300px;
                 margin-right: 10px;
                 background: #8C8;
                 border-radius: 5px;
