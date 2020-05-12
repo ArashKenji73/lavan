@@ -90,7 +90,6 @@ navbar-wrapper, header.container nav {
   position: fixed;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   top: 0px;
   left: 0px;
@@ -102,18 +101,36 @@ navbar-wrapper, header.container nav {
   opacity: 0;
   transition: all 0.3s linear;
 }
+@media screen and (min-width: 576px) {
+  navbar-wrapper, header.container nav {
+    justify-content: center;
+  }
+}
 navbar-wrapper.toggledIn, header.container nav.toggledIn {
   visibility: visible;
   z-index: 1;
   opacity: 1;
+}
+navbar-wrapper.toggledIn .main-nav, header.container nav.toggledIn .main-nav {
+  margin-top: 25%;
+}
+@media screen and (min-width: 576px) {
+  navbar-wrapper.toggledIn .main-nav, header.container nav.toggledIn .main-nav {
+    margin-top: 0%;
+  }
 }
 navbar-wrapper.toggledIn .main-nav li a, header.container nav.toggledIn .main-nav li a {
   transform: translateY(0);
 }
 navbar-wrapper .top-level, header.container nav .top-level {
   position: absolute;
-  top: 60px;
+  top: 17px;
   height: 50px;
+}
+@media screen and (min-width: 576px) {
+  navbar-wrapper .top-level, header.container nav .top-level {
+    top: 60px;
+  }
 }
 navbar-wrapper .top-level #closeMenu, header.container nav .top-level #closeMenu {
   padding: 0px;
@@ -168,10 +185,18 @@ navbar-wrapper .main-nav li a:hover, header.container nav .main-nav li a:hover {
 }
 navbar-wrapper .navbar-footer, header.container nav .navbar-footer {
   display: flex;
+  flex-direction: column;
   position: absolute;
   bottom: 0%;
-  height: 100px;
+  height: 250px;
+  padding: 15px;
   background: #ddd;
+}
+@media screen and (min-width: 576px) {
+  navbar-wrapper .navbar-footer, header.container nav .navbar-footer {
+    flex-direction: row;
+    height: 100px;
+  }
 }
 navbar-wrapper .navbar-footer .address, header.container nav .navbar-footer .address,
 navbar-wrapper .navbar-footer .social,
@@ -202,8 +227,13 @@ navbar-wrapper .navbar-footer .social span, header.container nav .navbar-footer 
 }
 navbar-wrapper .navbar-footer .phone, header.container nav .navbar-footer .phone {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   font-size: 1rem;
+}
+@media screen and (min-width: 576px) {
+  navbar-wrapper .navbar-footer .phone, header.container nav .navbar-footer .phone {
+    justify-content: flex-end;
+  }
 }
 
 @media (min-width: 576px) {
@@ -271,7 +301,12 @@ navbar-wrapper .navbar-footer .phone, header.container nav .navbar-footer .phone
 header.container {
   display: flex;
   align-items: center;
-  height: 180px;
+  height: 90px;
+}
+@media screen and (min-width: 576px) {
+  header.container {
+    height: 180px;
+  }
 }
 header.container .logo {
   margin-right: auto;
@@ -316,6 +351,7 @@ header.container .phone-menuBtn-wrapper .phone span {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   flex-direction: column;
   padding: 1rem;
   width: 28%;
@@ -331,7 +367,26 @@ header.container .phone-menuBtn-wrapper .phone span {
   transform: translateY(-10px);
   box-shadow: 0px 0px 20px #c3c1c1;
 }
+.samples .left .carousel .carousel-cell:hover img {
+  z-index: -1;
+  filter: brightness(50%);
+}
+.samples .left .carousel .carousel-cell:hover .title, .samples .left .carousel .carousel-cell:hover .subtitle {
+  color: #fff;
+  display: block;
+  z-index: 1;
+  transition: all 0.3s;
+}
+.samples .left .carousel .carousel-cell img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  transition: all 0.3s;
+}
 .samples .left .carousel .carousel-cell .title, .samples .left .carousel .carousel-cell .subtitle {
+  display: none;
   text-align: center;
 }
 .samples .left .carousel .carousel-cell .title {
